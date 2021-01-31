@@ -1,9 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-* {
   box-sizing: border-box;
 }
 
@@ -21,8 +18,7 @@
 
 #div1 {
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 100px;
   top: 20px;
 }
 
