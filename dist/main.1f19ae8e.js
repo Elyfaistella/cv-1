@@ -120,8 +120,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"main.js":[function(require,module,exports) {
 var demo = document.querySelector('#demo'); //选择id=demo
 
-var n = 1;
-demo.innerHTML = n; //往demo里写字
+var string = "\u4F60\u597D\uFF0C\u6211\u662F\u4E00\u540D\u524D\u7AEF\u65B0\u4EBA";
+console.log(string.length);
+var n = 0;
+demo.innerHTML = string.substring(0, n); //从哪个参数开始，从哪个参数结束
 
 /*
 setTimeout(()=>{
@@ -139,13 +141,14 @@ setInterval(()=>{
 
 var step = function step() {
   setTimeout(function () {
+    console.log(n);
     n = n + 1;
-    demo.innerHTML = n;
+    demo.innerHTML = string.substring(0, n);
 
-    if (n <= 10) {
+    if (n < string.length) {
       step(); //---重点---
-    } else {}
-  }, 1000);
+    }
+  }, 400);
 };
 
 step();
@@ -185,7 +188,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58506" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59073" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
